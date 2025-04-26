@@ -36,8 +36,8 @@ Nimbus-Edge is a secure, resilient, and scalable cloud-native platform built for
 | Repository | Description |
 |:-----------|:------------|
 | [`webapp`](./webapp/README.md) | Spring Boot REST API backend for user management, S3 uploads, and authentication. |
-| [`lambda-email-service`](./lambda-email-service/README.md) | AWS Lambda serverless function triggered via SNS to send verification emails using SendGrid. |
-| [`infrastructure`](./infrastructure/README.md) | Full Infrastructure as Code setup with Terraform for AWS VPC, EC2, RDS, S3, ALB, IAM, SNS, Lambda, and CloudWatch. |
+| [`serverless`](./serverless/README.md) | AWS Lambda serverless function triggered via SNS to send verification emails using SendGrid. |
+| [`tf-aws-infra`](./tf-aws-infra/README.md) | Full Infrastructure as Code setup with Terraform for AWS VPC, EC2, RDS, S3, ALB, IAM, SNS, Lambda, and CloudWatch. |
 
 ---
 
@@ -52,14 +52,14 @@ Nimbus-Edge is a secure, resilient, and scalable cloud-native platform built for
 - Deployment artifacts built and baked into custom AMIs
 - Application logs stored in CloudWatch
 
-### Lambda Email Verification Service (`lambda-email-service`)
+### Lambda Email Verification Service (`serverless`)
 - Node.js 18 Lambda function
 - Securely fetches SendGrid API key from AWS Secrets Manager
 - Listens to SNS notifications from the backend
 - Sends HTML-styled email verification links
 - Detailed error handling and CloudWatch logging
 
-### Terraform Infrastructure (`infrastructure`)
+### Terraform Infrastructure (`tf-aws-infra`)
 - Modularized Terraform setup following AWS best practices
 - Multi-AZ VPC with public/private subnets
 - ALB with SSL termination
@@ -135,6 +135,3 @@ Nimbus-Edge is a secure, resilient, and scalable cloud-native platform built for
 ## 📜 License
 
 This project is licensed under the MIT License.
-
----
-
